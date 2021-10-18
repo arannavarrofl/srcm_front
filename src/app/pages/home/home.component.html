@@ -1,0 +1,109 @@
+<div class="grid-container">
+  <div align="center">
+    <h1>Sistema de Compras de Recursos Materiales</h1>
+  </div>
+  <mat-grid-list cols="4" rowHeight="320px">
+    <mat-grid-tile *ngFor="let cardG of cardsG | async" [colspan]="cardG.cols" [rowspan]="cardG.rows">
+
+      <mat-card class="dashboard-card" style="background-color: whitesmoke;">
+        <mat-card-header>
+          <mat-card-title>
+
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <img src="http://www.tepic.tecnm.mx/images/escudo_itt_200x200.png" class="escudoIT-responsive">
+
+          <h1>Bienvenido</h1>
+          <h2>Armando Antonio Navarro Flores</h2>
+
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile *ngFor="let cardG of cardsG | async" [colspan]="cardG.cols" [rowspan]="cardG.rows">
+
+      <mat-card class="dashboard-card" style="background-color: whitesmoke;">
+        <mat-card-header>
+          <mat-card-title>
+
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+
+          <img src="../../../assets/images/logoeneit-inicio.png">
+          <h2>Plataforma administrativa del ENEIT</h2>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+  </mat-grid-list>
+</div>
+<hr>
+<div align="center">
+  <h1>Menú</h1>
+</div>
+<div class="grid-container">
+  <mat-grid-list cols="4" rowHeight="320px">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="card-link" routerLink="/usuarios" style="background-color:#448AFF">
+        <mat-card-header>
+          <mat-card-title>
+
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <h1 style="color: white;">Compras</h1>
+          <i class="fas fa-shopping-cart fa-5x"></i>
+         </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="card-link" routerLink="/mensajes" style="background-color: #42A5F5">
+        <mat-card-header>
+          <mat-card-title>
+
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+
+          <h1 style="color: white;">Proveedores</h1>
+          <i class="fas fa-truck fa-5x"></i>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="card-link" routerLink="/documentos" style="background-color: #2196F3">
+        <mat-card-header>
+          <mat-card-title>
+
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <h1 style="color: white;">Almacén</h1>
+          <i class="fas fa-file-alt fa-5x"></i>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">
+      <mat-card class="card-link" routerLink="/documentos" style="background-color: #2979FF">
+        <mat-card-header>
+          <mat-card-title>
+
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <h1 style="color: white;"> Usuarios </h1>
+          <i class="fas fa-briefcase fa-5x"></i>
+
+        </mat-card-content>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

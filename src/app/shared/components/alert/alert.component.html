@@ -1,0 +1,15 @@
+<mat-toolbar color="{{color}}">
+  <span>{{title}}</span>
+  <span class="fill-remaining-space"></span>
+</mat-toolbar>
+<br>
+<div style="text-align: center;">
+  <i *ngIf="type == 'error'" class="fas fa-times fa-3x" style="color: #f44336"></i>
+  <i *ngIf="type == 'success'" class="fas fa-check fa-3x" style="color: #43a047"></i>
+  <h2>{{message}}</h2>
+  <br>
+</div>
+<div style="text-align: right;">
+  <button mat-button color="{{color}}" (click)="onClose()">ACEPTAR</button>
+</div>
+ 

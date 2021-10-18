@@ -1,0 +1,52 @@
+
+<div class="container">
+  <mat-card>
+    <h1>Departamentos</h1>
+    <button mat-raised-button (click)="showModalDepartment()" >
+      <mat-icon>add</mat-icon>Agregar departamento
+  </button>&nbsp; &nbsp;
+    <mat-form-field appearance="standard">
+      <mat-label>Buscar</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Ej. Recursos Materiales" #input>
+    </mat-form-field>
+    
+  
+    <table mat-table [dataSource]="dataSource" matSort>
+  
+      <!--- Note that these columns can be defined in any order.
+            The actual rendered columns are set as a property on the row definition" -->
+    
+      <!-- ID Column -->
+      <ng-container matColumnDef="deptID">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
+        <td mat-cell *matCellDef="let element"> {{element.deptID}} </td>
+      </ng-container>
+    
+      <!-- Name Column -->
+      <ng-container matColumnDef="deptName">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+        <td mat-cell *matCellDef="let element"> {{element.deptName}} </td>
+      </ng-container>
+    
+      <!-- Operations Column -->
+      <ng-container matColumnDef="operations">
+        <th mat-header-cell *matHeaderCellDef> Operaciones </th>
+        <td mat-cell *matCellDef="let element">
+          <div style="text-align:center;">
+            &nbsp;<button mat-icon-button matTooltip="Editar departamento"  color="accent" (click)="showModalEditDepartment(element)">
+              <mat-icon>edit</mat-icon>
+            </button>&nbsp;
+            <button mat-icon-button matTooltip="Eliminar departamento"  color="warn" (click)="deleteDepartment(element.deptID)">
+              <mat-icon>delete</mat-icon>
+            </button>
+          </div>
+        </td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+  </mat-card>
+  
+</div> 

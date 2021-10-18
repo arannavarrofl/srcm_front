@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <span>{{title}}</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()"  tabIndex="-1"><mat-icon>clear</mat-icon></button>
+  </mat-toolbar>
+<div class="container">
+  <form #categoryForm="ngForm" >
+      <input type="hidden" name="_id">
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Nombre del departamento" name="name" [(ngModel)]="dept.deptName">
+    </mat-form-field>
+    <br>
+ 
+    <br>
+    <br><br>
+  </form>
+</div>
+<div style="text-align:right;">
+    <button mat-button color="primary" (click)="saveDepartment()">GUARDAR</button>
+ 
+</div>
+  
+

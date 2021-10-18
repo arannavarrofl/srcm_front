@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+/*a{
+    color:#2196F3;
+  }
+  
+  a:hover{
+    color:#0D47A1;
+  }
+*/
+ /* h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family:"Roboto", Arial, sans-serif;
+  position:relative;
+  color: #1b396a;
+
+}*/
+
+body{
+  font-family:sans-serif;-ms-text-size-adjust:100%;
+}
+
+div.container{
+  margin: 0px 40px;
+}
+
+.fill-remaining-space{
+  flex: 1 1 auto;
+}
+
+form.normal-form{
+  margin: 10px;
+}
+
+.controls-container{
+  width: 100%;
+  padding: 5%;
+}
+
+.controls-container > *{
+  width: 100%;
+}
+
+.add-bottom-padding{
+  padding-bottom: 10px;
+}
+
+mat-radio-group mat-radio-button{
+  margin-left: 5%;
+}
+
+.button-row button{
+  margin: 5px;
+}
+
+mat-card { 
+  margin: auto;
+  display: block;
+  margin-top: 2rem;
+  }
+
+  .btn-dialog-close{
+    width: 45px;
+    min-width: 0px !important;
+    height: 40px;
+    padding: 0px !important;
+  }
+
+  .fill-remaining-space {
+    /* This fills the remaining space, by using flexbox. 
+       Every toolbar row uses a flexbox row layout. */
+    flex: 1 1 auto;
+  }
