@@ -1,0 +1,49 @@
+<mat-toolbar color="primary">
+    <span>Nuevo Proveedor</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()" tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div class="container">
+  <form #supplierForm="ngForm" >
+      <input type="hidden" name="_id">
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Nombre del proveedor*" name="supplierName" [(ngModel)]="supplier.supplierName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Razón social" name="companyName" [(ngModel)]="supplier.companyName" >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="RFC*" name="rfc" [(ngModel)]="supplier.rfc">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Teléfono" name="phone" [(ngModel)]="supplier.phone">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Correo eléctronico" name="email" [(ngModel)]="supplier.email">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Domicilio*" name="address" [(ngModel)]="supplier.address">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Municipio*" name="city" [(ngModel)]="supplier.city">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Estado*" name="state" [(ngModel)]="supplier.state">
+    </mat-form-field>
+    <br>
+    <br><br>
+  </form>
+</div>
+<div style="text-align:right;">
+    <button mat-button color="primary" (click)="saveSupplier()">GUARDAR</button>
+ 
+</div>
+  
+

@@ -21,7 +21,7 @@ import { FormDepartmentComponent } from './form-department/form-department.compo
     DepartmentsRoutingModule,
     MaterialModule,
     SharedModule,
-    FormsModule
+    FormsModule 
   ]
 })
 export class DepartmentsModule { }
