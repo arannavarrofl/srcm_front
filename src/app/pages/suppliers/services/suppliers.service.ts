@@ -19,7 +19,7 @@ export class SuppliersService {
       return this.http.get(`${this.API_URI}/suppliers`);
   }
 
-  updateSupplier(updatedSupplier:Supplier, id: string){
+  updateSupplier(id: string, updatedSupplier:Supplier){
       return this.http.put(`${this.API_URI}/suppliers/${id}`,updatedSupplier);
   }
 

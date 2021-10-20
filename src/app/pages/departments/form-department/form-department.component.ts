@@ -23,7 +23,7 @@ export class FormDepartmentComponent implements OnInit {
     }//constructor
 
   ngOnInit(): void {
-    if (this.data == null) {
+    if (this.data == null) { 
       this.title = "Nueva categoría";     
     }
     else {
@@ -34,44 +34,41 @@ export class FormDepartmentComponent implements OnInit {
 
 
   saveDepartment(){
-  let respuesta:any = { message: "" };
-  if(this.dept.deptID==0){
-        delete this.dept.deptID;
-        this.deptsService.saveDepartment(this.dept).subscribe(
-        res=>{
-          respuesta = res; 
-          this.onClose();      
-          this.dialog.open(AlertComponent, {
-            width: '400px',
-            data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
-          });
-        },
-        err =>{
-           console.log(err);       
-        }
-      );
-  } //Agregar
-  else{
-    let deptID = this.dept.deptID+""; 
- 
-    this.deptsService.updateDepartment(deptID,this.dept).subscribe(
-      res=>{
-        respuesta = res; 
-        this.onClose();      
-        this.dialog.open(AlertComponent, {
-          width: '400px',
-          data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
-        });
-      },
-      err =>{
-         console.log(err);       
-      }
-    );
-  } 
-  //if(this.dept.deptID)
-
-   
-  }
+      let respuesta:any = { message: "" };
+      if(this.dept.deptID==0){
+            delete this.dept.deptID;
+            this.deptsService.saveDepartment(this.dept).subscribe(
+            res=>{
+              respuesta = res; 
+              this.onClose();      
+              this.dialog.open(AlertComponent, {
+                width: '400px',
+                data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
+              });
+            },
+            err =>{
+              console.log(err);       
+            }
+          );
+      } //Agregar
+      else{
+        let deptID = this.dept.deptID+""; 
+    
+        this.deptsService.updateDepartment(deptID,this.dept).subscribe(
+          res=>{
+            respuesta = res; 
+            this.onClose();      
+            this.dialog.open(AlertComponent, {
+              width: '400px',
+              data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
+            });
+          },
+          err =>{
+            console.log(err);       
+          }
+        );
+      } //else  
+  }//saveDepartment
   
 
   onClose() {

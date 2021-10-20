@@ -12,6 +12,8 @@ import { SuppliersService } from '../services/suppliers.service';
 export class FormSuppliersComponent implements OnInit {
 
   title:string;
+  edit:boolean;
+
   supplier:Supplier = {
     supplierID:"",
     supplierName: "" ,
@@ -27,9 +29,18 @@ export class FormSuppliersComponent implements OnInit {
   constructor(private suppliersService: SuppliersService,private dialogRef:MatDialogRef<FormSuppliersComponent>,
     private dialog:MatDialog, @Inject(MAT_DIALOG_DATA) public data: any) { 
         this.title="";
+        this.edit=false;
     }//constructor
 
   ngOnInit(): void {
+    if (this.data == null) {
+      this.title = "Nuevo proveedor";     
+    }
+    else {
+      this.title = "Editar proveedor";
+      this.supplier=this.data;
+      this.edit = true;
+    }
   }
 
   onClose() {
@@ -38,20 +49,40 @@ export class FormSuppliersComponent implements OnInit {
 
   saveSupplier(){
     let respuesta:any = { message: "" };
-    delete this.supplier.supplierID;
-        this.suppliersService.saveSupplier(this.supplier).subscribe(
-        res=>{
-          respuesta = res; 
-          this.onClose();      
-          this.dialog.open(AlertComponent, {
-            width: '400px',
-            data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
-          });
-        },
-        err =>{
-           console.log(err);       
-        }
-      );
-  }
+      if(this.edit){
+        const supplierID = this.supplier.supplierID+"";
+    
+        this.suppliersService.updateSupplier(supplierID,this.supplier).subscribe(
+          res=>{
+            respuesta = res; 
+            this.onClose();      
+            this.dialog.open(AlertComponent, {
+              width: '400px',
+              data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
+            });
+          },
+          err =>{
+            console.log(err);       
+          }
+        );
+      } //Agregar
+      else{
+        delete this.supplier.supplierID;
+            this.suppliersService.saveSupplier(this.supplier).subscribe(
+            res=>{
+              respuesta = res; 
+              this.onClose();      
+              this.dialog.open(AlertComponent, {
+                width: '400px',
+                data: { 'title': 'Guardado', 'type': 'success', 'message': respuesta.message }
+              });
+            },
+            err =>{
+               console.log(err);       
+            }
+          );
+        
+      } //else     
+  }//saveSupplier
 
 }

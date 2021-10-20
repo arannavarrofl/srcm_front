@@ -73,10 +73,10 @@
           <th mat-header-cell *matHeaderCellDef> Operaciones </th>
           <td mat-cell *matCellDef="let element">
             <div style="text-align:center;">
-              &nbsp;<button mat-icon-button matTooltip="Editar departamento"  color="accent">
+              &nbsp;<button mat-icon-button matTooltip="Editar proveedor"  color="accent" (click)="showModalEditSupplier(element)">
                 <mat-icon>edit</mat-icon>
               </button>&nbsp;
-              <button mat-icon-button matTooltip="Eliminar departamento"  color="warn">
+              <button mat-icon-button matTooltip="Eliminar proveedor"  color="warn" (click)="deleteSupplier(element.supplierID)">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>

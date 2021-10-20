@@ -66,8 +66,6 @@ export class DepartmentsComponent implements OnInit {
               data: { 'title': 'Eliminado', 'type': 'success', 'message': respuesta.message }
             });
           });
-        console.log("Eliminar: "+deptID);
-
       }//res
     });
   }//deleteDepartment
@@ -80,7 +78,7 @@ export class DepartmentsComponent implements OnInit {
     this.dialog.open(FormDepartmentComponent, dialogConfig).afterClosed().subscribe(result => {
       this.getDepartments();
     });
-  }
+  }//showModalDepartment
 
   showModalEditDepartment(department:string) {
     this.dialog.open(FormDepartmentComponent, {
@@ -91,5 +89,5 @@ export class DepartmentsComponent implements OnInit {
       this.getDepartments();
     });
 
-  }
+  }// showModalEditDepartment
 }

@@ -46,12 +46,31 @@ export class SuppliersComponent implements OnInit {
         this.dataSource = new MatTableDataSource(this.suppliers);
         this.dataSource.paginator = this.paginator;
         this.dataSource.sort = this.sort;
-
-        console.log(this.suppliers);
       },
       err=>console.log(err)
     );
   }//getSuppliers
+
+  deleteSupplier(supplierID:string){
+    let respuesta:any = { message: "" };
+    this.dialog.open(ConfirmDialogComponent, {
+      width: '400px',
+      data: { 'title': 'Eliminar Proveedor', 'type': 'success', 'message': '¿Está seguro de eliminar este registro?' }
+    }).afterClosed().subscribe(res => {
+      if (res) {
+            this.supplierService.deleteSupplier(supplierID).subscribe(res => {
+            this.getSuppliers();
+            respuesta=res;
+            this.dialog.open(AlertComponent, {
+              width: '400px',
+              data: { 'title': 'Eliminado', 'type': 'success', 'message': respuesta.message }
+            });
+          });
+ 
+
+      }//res
+    });
+  }//deleteSupplier
 
   showModalSupplier() {
     const dialogConfig = new MatDialogConfig();
@@ -61,6 +80,17 @@ export class SuppliersComponent implements OnInit {
     this.dialog.open(FormSuppliersComponent, dialogConfig).afterClosed().subscribe(result => {
       this.getSuppliers();
     });
-  }
+  }//showModalSupplier
+
+  showModalEditSupplier(supplier:string) {
+    this.dialog.open(FormSuppliersComponent, {
+      disableClose: true,
+      width: '600px',
+      data: supplier
+    }).afterClosed().subscribe(result => {
+      this.getSuppliers();
+    });
+
+  }// showModalEditDepartment
 
 }
