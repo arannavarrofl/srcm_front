@@ -23,32 +23,15 @@
         <!-- supplierName Column -->
         <ng-container matColumnDef="supplierName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre proveedor </th>
-          <td mat-cell *matCellDef="let element"> {{element.supplierName}} </td>
-        </ng-container>
-
-         <!-- companyName Column -->
-        <ng-container matColumnDef="companyName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header> Razón Social </th>
-          <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+          <td mat-cell *matCellDef="let element">&nbsp; {{element.supplierName}} </td>
         </ng-container>
 
         <!-- rfc Column -->
         <ng-container matColumnDef="rfc">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> RFC </th>
-            <td mat-cell *matCellDef="let element"> {{element.rfc}} </td>
+            <td mat-cell *matCellDef="let element"> &nbsp;{{element.rfc}} </td>
         </ng-container>     
-       
-        <!-- phone Column -->
-      | <ng-container matColumnDef="phone">
-             <th mat-header-cell *matHeaderCellDef mat-sort-header> Teléfono </th>
-             <td mat-cell *matCellDef="let element">&nbsp; {{element.phone}} </td>
-        </ng-container> 
-
-        <!-- email Column -->
-        <ng-container matColumnDef="email">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> Correo Electrónico </th>
-            <td mat-cell *matCellDef="let element">&nbsp; {{element.email}} </td>
-        </ng-container>
+     
       
         <!-- domicilio Column -->
         <ng-container matColumnDef="address">
@@ -59,24 +42,27 @@
          <!-- city Column -->
          <ng-container matColumnDef="city">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Municipio </th>
-            <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+            <td mat-cell *matCellDef="let element">&nbsp; {{element.city}} </td>
         </ng-container> 
 
         <!-- state Column -->
         <ng-container matColumnDef="state">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Estado </th>
-            <td mat-cell *matCellDef="let element"> {{element.state}} </td>
+            <td mat-cell *matCellDef="let element">&nbsp; {{element.state}} </td>
         </ng-container> 
         
         <!-- Operations Column -->
         <ng-container matColumnDef="operations">
-          <th mat-header-cell *matHeaderCellDef> Operaciones </th>
+          <th mat-header-cell *matHeaderCellDef> <div style="text-align: center;">Operaciones</div> </th>
           <td mat-cell *matCellDef="let element">
             <div style="text-align:center;">
+              &nbsp;<button mat-icon-button matTooltip="Ver detalles"  color="primary">
+                <mat-icon>visibility</mat-icon>
+              </button>
               &nbsp;<button mat-icon-button matTooltip="Editar proveedor"  color="accent" (click)="showModalEditSupplier(element)">
                 <mat-icon>edit</mat-icon>
-              </button>&nbsp;
-              <button mat-icon-button matTooltip="Eliminar proveedor"  color="warn" (click)="deleteSupplier(element.supplierID)">
+              </button>
+              &nbsp;<button mat-icon-button matTooltip="Eliminar proveedor"  color="warn" (click)="deleteSupplier(element.supplierID)">
                 <mat-icon>delete</mat-icon>
               </button>
             </div>

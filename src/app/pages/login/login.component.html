@@ -1,0 +1,32 @@
+
+  <div class="row">
+    <main>
+      <mat-card class="card-1">
+        
+  
+        <h2>Iniciar sesión</h2>
+        <mat-card-content>
+          <form novalidate   #frmLogin="ngForm">
+            <mat-form-field>
+              <input matInput type="email" placeholder="Correo electrónico" name="email" name="name" [(ngModel)]="login.email">
+            </mat-form-field>
+  
+            <br>
+            <mat-form-field>
+              <input matInput type="password" placeholder="Contraseña" name="password" name="name" [(ngModel)]="login.password">
+            </mat-form-field>
+  
+            <br><br>
+            <button mat-button mat-raised-button (click)="validateLogin()"  color="primary"
+              style="display:block; width:100%">Entrar</button>
+          </form>
+        </mat-card-content>
+  
+  
+  
+      </mat-card>
+    </main>
+  
+  </div>
+  <br>
+  <br>

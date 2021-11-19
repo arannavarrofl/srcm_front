@@ -17,7 +17,7 @@ import {MatTableModule} from '@angular/material/table';
 import {MatSortModule} from '@angular/material/sort';
 import {MatTooltipModule} from '@angular/material/tooltip';
 import {MatDialogModule} from '@angular/material/dialog';
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 
 @NgModule({ 
   exports: [
@@ -38,7 +38,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatTableModule,
     MatSortModule,
     MatTooltipModule,
-    MatDialogModule
+    MatDialogModule,
+    MatAutocompleteModule
         
   ]
 })

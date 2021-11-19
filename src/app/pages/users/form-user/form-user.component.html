@@ -1,0 +1,48 @@
+
+<mat-toolbar color="primary">
+    <span>Nuevo usuario</span>
+    <span class="fill-remaining-space"></span>
+    <button class="btn-dialog-close" mat-stroked-button (click)="onClose()"  tabIndex="-1"><mat-icon>clear</mat-icon></button>
+</mat-toolbar>
+<div class="container">
+  <form #userForm="ngForm" >
+      <input type="hidden" name="_id">
+    <br>
+    <mat-form-field>
+      <input matInput placeholder="Nombre(s)*" name="userName" [(ngModel)]="user.userName">
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Primer apellido*" name="firstLastname" [(ngModel)]="user.firstLastname"  >
+    </mat-form-field>
+    <br>
+    <mat-form-field>
+        <input matInput placeholder="Segundo apellido" name="secondLastname" [(ngModel)]="user.secondLastname">
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Correo electrónico" name="email" [(ngModel)]="user.email">
+    </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Rol de usuario</mat-label>
+        <mat-select name="roleID" [(ngModel)]="user.roleID">
+          <mat-option *ngFor="let role of roles" [value]="role.roleID">{{role.roleName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    <br>
+    <mat-form-field appearance="fill">
+        <mat-label>Departamento</mat-label>
+        <mat-select name="deptID" [(ngModel)]="user.deptID">
+          <mat-option *ngFor="let dept of depts" [value]="dept.deptID">{{dept.deptName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+    
+    <br><br>
+  </form>
+</div>
+<div style="text-align:right;">
+    <button mat-button color="primary" (click)="saveUser()">GUARDAR</button>
+ 
+</div>
+  
+

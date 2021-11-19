@@ -88,6 +88,6 @@ export class DepartmentsComponent implements OnInit {
     }).afterClosed().subscribe(result => {
       this.getDepartments();
     });
-
+ 
   }// showModalEditDepartment
 }

@@ -5,10 +5,9 @@
 </mat-toolbar>
 <div class="container">
   <form #deptForm="ngForm" >
-      <input type="hidden" name="_id">
     <br>
     <mat-form-field>
-      <input matInput placeholder="Nombre del departamento" name="deptName" [(ngModel)]="dept.deptName">
+      <input matInput placeholder="Nombre del rol" name="roleName" [(ngModel)]="role.roleName">
     </mat-form-field>
     <br>
  
@@ -17,7 +16,7 @@
   </form>
 </div>
 <div style="text-align:right;">
-    <button mat-button color="primary" (click)="saveDepartment()">GUARDAR</button>
+    <button mat-button color="primary" (click)="saveRole()">GUARDAR</button>
  
 </div>
   

@@ -38,6 +38,13 @@ export class AlertComponent implements OnInit {
       this.color = "accent";
       this.icon_color = "";
     }
+    if(this.data.type == 'info'){
+      this.title = this.data.title;
+      this.message = this.data.message;
+      this.color = "primary";
+      this.icon_color = "";
+    }
+
   }//ngOnInit
   onClose() {
     this.type = "";

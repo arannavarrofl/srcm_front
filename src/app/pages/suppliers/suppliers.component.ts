@@ -17,8 +17,7 @@ export class SuppliersComponent implements OnInit {
 
   suppliers: any = [];
 
-  displayedColumns: string[] = ['supplierID', 'supplierName','companyName','rfc','phone','email',
-  'address','city','state','operations'];
+  displayedColumns: string[] = ['supplierID', 'supplierName','rfc','address','city','state','operations'];
   dataSource!: MatTableDataSource<any>; 
   
   @ViewChild(MatPaginator) paginator!: MatPaginator;
